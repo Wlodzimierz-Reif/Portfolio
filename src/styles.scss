@@ -1,0 +1,380 @@
+@import "./variables.scss";
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  // border: 1px solid red;
+  font-family: "Nunito", sans-serif;
+}
+
+@mixin btn-primary {
+  border: 1px solid $break-color;
+  border-radius: 5px;
+  // background-color: $secondary-transparent;
+  color: $primary-color;
+  padding: $spacing;
+  &:hover {
+    background-color: $break-color;
+    color: $secondary-color;
+    transition: 0.3s;
+  }
+}
+
+@mixin btn-secondary {
+  border: 1px solid $primary-color;
+  border-radius: 5px;
+
+  // background-color: $primary-transparent;
+  color: $primary-color;
+  padding: $spacing;
+  &:hover {
+    background-color: $primary-color;
+    color: $secondary-color;
+    transition: 0.3s;
+  }
+}
+
+body {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+    url("./images/background.jpg");
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+a {
+  text-decoration: none;
+  &:hover {
+    color: $break-color;
+    transition: 0.3s;
+  }
+}
+
+.hidden {
+  visibility: hidden !important;
+  opacity: 0;
+}
+
+section {
+  width: 95vw;
+  margin: $spacing;
+  padding: $spacing * 2;
+}
+
+// HEADER
+// HEADER
+// HEADER
+
+header {
+  overflow: hidden;
+  background-color: transparent;
+  height: 40px;
+  display: flex;
+  justify-content: space-between;
+
+  #logo {
+    text-align: center;
+    font-size: $spacing * 2;
+    color: rgb(42, 77, 163);
+    position: absolute;
+    left: 0;
+    top: 0;
+
+    * {
+      font-family: "Consolas";
+    }
+
+    .tag {
+      color: grey;
+    }
+
+    .name {
+      color: white;
+    }
+  }
+
+  #links {
+    top: 5px;
+    right: 5px;
+    position: fixed;
+    background-color: $secondary-transparent;
+    // visibility: visible;
+    // opacity: 1;
+    z-index: 1;
+
+    a {
+      position: relative;
+      min-width: 125px;
+    }
+  }
+
+  a {
+    padding: $spacing;
+    font-size: 17px;
+    display: block;
+    color: $primary-color;
+  }
+
+  .icon {
+    color: $primary-color;
+    display: block;
+    position: fixed;
+    right: 5px;
+    top: 5px;
+    height: 40px;
+    width: 40px;
+    background-color: $secondary-transparent;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 20px;
+    z-index: 2;
+
+    span {
+      font-size: 20px;
+    }
+  }
+}
+
+.jumbotron {
+  text-align: center;
+  padding: $spacing * 5;
+  height: 100vh;
+
+  h1,
+  h3 {
+    padding: $spacing * 3;
+    color: $primary-color;
+  }
+
+  nav {
+    margin-top: $spacing * 5;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    a {
+      border: 2px solid black;
+      margin: $spacing * 2;
+
+      &:hover {
+        color: $break-color;
+      }
+    }
+
+    .btn-primary {
+      @include btn-primary;
+    }
+
+    .btn-secondary {
+      @include btn-secondary;
+    }
+  }
+}
+
+// ABOUT
+// ABOUT
+// ABOUT
+
+#about {
+  min-height: 110vh;
+  background-color: $primary-color;
+  padding: $spacing;
+  color: $secondary-color;
+
+  div > .completion {
+    display: flex;
+    justify-content: space-between;
+    font-size: 0.8em;
+  }
+
+  #image {
+    margin-top: $spacing * 8;
+    display: flex;
+    justify-content: center;
+    // margin: $spacing * 2;
+    img {
+      min-width: 200px;
+      max-width: 200px;
+    }
+  }
+
+  p {
+    padding-top: $spacing;
+  }
+}
+
+// PROGRESS BAR
+// PROGRESS BAR
+// PROGRESS BAR
+
+.progress-bar {
+  background-color: rgb(153, 153, 153);
+  height: 25px;
+  padding: 5px;
+  width: 40%;
+  min-width: 200px;
+  margin: $spacing * 5 auto;
+  border-radius: 5px;
+  box-shadow: 0 1px 5px #000 inset, 0 1px 0 #444;
+}
+
+.progress-bar span {
+  display: inline-block;
+  height: 100%;
+  border-radius: 3px;
+  box-shadow: 0 1px 0 rgba(255, 208, 89, 0.5) inset;
+  transition: width 0.4s ease-in-out;
+}
+
+.blue span {
+  background-color: rgb(255, 208, 89);
+}
+
+.stripes span {
+  background-size: 30px 30px;
+  background-image: linear-gradient(
+    135deg,
+    rgba(255, 255, 255, 0.15) 25%,
+    transparent 25%,
+    transparent 50%,
+    rgba(255, 255, 255, 0.15) 50%,
+    rgba(255, 255, 255, 0.15) 75%,
+    transparent 75%,
+    transparent
+  );
+  animation: animate-stripes 3s linear infinite;
+}
+
+@keyframes animate-stripes {
+  0% {
+    background-position: 0 0;
+  }
+
+  100% {
+    background-position: 60px 0;
+  }
+}
+
+// HOBBY
+// HOBBY
+// HOBBY
+
+#hobby {
+  //   min-height: 110vh;
+  background-color: $secondary-color;
+  color: $primary-color;
+}
+
+// PORTFOLIO
+// PORTFOLIO
+// PORTFOLIO
+
+#portfolio {
+  min-height: 110vh;
+  background-color: $secondary-color;
+  justify-content: center;
+  display: grid;
+  align-content: space-evenly;
+  // grid-template-rows: 1fr;
+  grid-gap: $spacing * 3;
+  color: $primary-color;
+
+  .project {
+    height: 250px;
+    width: 250px;
+    position: relative;
+    // border: 1px solid green;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    &:hover .caption {
+      opacity: 1;
+      visibility: visible;
+    }
+
+    img {
+      width: 100%;
+    }
+
+    h3 {
+      text-align: center;
+      color: $primary-color;
+    }
+
+    .caption {
+      visibility: hidden;
+      opacity: 0;
+      position: absolute;
+      top: 0;
+      left: 0;
+      height: 100%;
+      width: 100%;
+      // background-color: $secondary-transparent;
+      background: radial-gradient($secondary-transparent, $secondary-color);
+
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: space-between;
+      padding-bottom: $spacing * 2;
+      transition: 0.3s;
+
+      p {
+        text-align: center;
+        padding: $spacing;
+      }
+      .btn-primary {
+        @include btn-primary;
+        margin: $spacing;
+      }
+
+      .btn-secondary {
+        @include btn-secondary;
+      }
+    }
+  }
+}
+
+// CONTACT
+// CONTACT
+// CONTACT
+
+#contact {
+  min-height: 110vh;
+  background-color: $secondary-color;
+  color: $primary-color;
+
+  * {
+    background-color: $secondary-color;
+    border: none;
+    border-bottom: 1px $primary-color solid;
+    color: $primary-color;
+    // input:-webkit-autofill {
+    //   -webkit-text-fill-color: yellow !important;
+    input:-webkit-autofill {
+      -webkit-box-shadow: 0 0 0px 1000px $secondary-color inset;
+      -webkit-text-fill-color: $primary-color !important;
+    }
+    // }
+  }
+}
+
+@media only screen and (min-width: 768px) {
+  #portfolio {
+    grid-template-columns: auto auto;
+  }
+}
+
+@media only screen and (min-width: 1024px) {
+  #portfolio {
+    grid-template-columns: auto auto auto;
+  }
+}
