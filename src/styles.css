@@ -1,9 +1,13 @@
+html {
+  scroll-behavior: smooth;
+}
+
 * {
   margin: 0;
   padding: 0;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
-  font-family: "Nunito", sans-serif;
+  font-family: "Raleway", sans-serif;
 }
 
 body {
@@ -41,9 +45,8 @@ a:hover {
 }
 
 section {
-  width: 95vw;
-  margin: 8px;
-  padding: 16px;
+  width: 100%;
+  padding: 160px;
 }
 
 header {
@@ -68,7 +71,7 @@ header #logo {
 }
 
 header #logo * {
-  font-family: "Consolas";
+  font-family: "Inconsolata", monospace;
 }
 
 header #logo .tag {
@@ -219,8 +222,9 @@ header .icon span {
 }
 
 #about #image img {
-  min-width: 200px;
-  max-width: 200px;
+  border-radius: 20px;
+  width: 200px;
+  height: 200px;
 }
 
 #about p {
@@ -285,7 +289,6 @@ header .icon span {
 
 #portfolio {
   min-height: 110vh;
-  background-color: #0e0d0d;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
@@ -311,6 +314,11 @@ header .icon span {
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
+  -webkit-box-shadow: 0 0 10px #f0f0f0;
+          box-shadow: 0 0 10px #f0f0f0;
+  border-radius: 20px;
+  overflow: hidden;
+  background-color: #0e0d0d;
 }
 
 #portfolio .project:hover .caption {
@@ -325,6 +333,7 @@ header .icon span {
 #portfolio .project h3 {
   text-align: center;
   color: #f0f0f0;
+  margin-bottom: 8px;
 }
 
 #portfolio .project .caption {
@@ -389,21 +398,53 @@ header .icon span {
 }
 
 #contact {
-  min-height: 110vh;
-  background-color: #0e0d0d;
-  color: #f0f0f0;
+  background-color: #f0f0f0;
+  color: #0e0d0d;
+  padding: 0;
+  margin: 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 80px;
 }
 
-#contact * {
-  background-color: #0e0d0d;
+#contact form {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+#contact form * {
+  background-color: #f0f0f0;
   border: none;
-  border-bottom: 1px #f0f0f0 solid;
-  color: #f0f0f0;
+  border-bottom: 1px #0e0d0d solid;
+  color: #0e0d0d;
+  margin: 8px;
 }
 
-#contact * input:-webkit-autofill {
+#contact form * input:-webkit-autofill {
   -webkit-box-shadow: 0 0 0px 1000px #0e0d0d inset;
   -webkit-text-fill-color: #f0f0f0 !important;
+}
+
+#contact form .submit {
+  cursor: pointer;
+  border: 1px solid #0e0d0d;
+  padding: 8px;
 }
 
 @media only screen and (min-width: 768px) {

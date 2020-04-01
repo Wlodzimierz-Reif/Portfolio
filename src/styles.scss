@@ -1,11 +1,16 @@
 @import "./variables.scss";
 
+html {
+  scroll-behavior: smooth;
+}
+
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
   // border: 1px solid red;
-  font-family: "Nunito", sans-serif;
+  // font-family: "Nunito", sans-serif;
+  font-family: "Raleway", sans-serif;
 }
 
 @mixin btn-primary {
@@ -61,9 +66,9 @@ a {
 }
 
 section {
-  width: 95vw;
-  margin: $spacing;
-  padding: $spacing * 2;
+  width: 100%;
+  // margin: $spacing;
+  padding: $spacing * 20;
 }
 
 // HEADER
@@ -86,7 +91,8 @@ header {
     top: 0;
 
     * {
-      font-family: "Consolas";
+      // font-family: "Consolas";
+      font-family: "Inconsolata", monospace;
     }
 
     .tag {
@@ -198,10 +204,11 @@ header {
     margin-top: $spacing * 8;
     display: flex;
     justify-content: center;
-    // margin: $spacing * 2;
+
     img {
-      min-width: 200px;
-      max-width: 200px;
+      border-radius: 20px;
+      width: 200px;
+      height: 200px;
     }
   }
 
@@ -278,7 +285,6 @@ header {
 
 #portfolio {
   min-height: 110vh;
-  background-color: $secondary-color;
   justify-content: center;
   display: grid;
   align-content: space-evenly;
@@ -294,6 +300,10 @@ header {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    box-shadow: 0 0 10px $primary-color;
+    border-radius: 20px;
+    overflow: hidden;
+    background-color: $secondary-color;
 
     &:hover .caption {
       opacity: 1;
@@ -307,6 +317,7 @@ header {
     h3 {
       text-align: center;
       color: $primary-color;
+      margin-bottom: $spacing;
     }
 
     .caption {
@@ -348,22 +359,37 @@ header {
 // CONTACT
 
 #contact {
-  min-height: 110vh;
-  background-color: $secondary-color;
-  color: $primary-color;
+  // min-height: 110vh;
+  background-color: $primary-color;
+  color: $secondary-color;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: $spacing * 10;
 
-  * {
-    background-color: $secondary-color;
-    border: none;
-    border-bottom: 1px $primary-color solid;
-    color: $primary-color;
-    // input:-webkit-autofill {
-    //   -webkit-text-fill-color: yellow !important;
-    input:-webkit-autofill {
-      -webkit-box-shadow: 0 0 0px 1000px $secondary-color inset;
-      -webkit-text-fill-color: $primary-color !important;
+  form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    * {
+      background-color: $primary-color;
+      border: none;
+      border-bottom: 1px $secondary-color solid;
+      color: $secondary-color;
+      margin: $spacing;
+      input:-webkit-autofill {
+        -webkit-box-shadow: 0 0 0px 1000px $secondary-color inset;
+        -webkit-text-fill-color: $primary-color !important;
+      }
     }
-    // }
+    .submit {
+      cursor: pointer;
+      border: 1px solid $secondary-color;
+      padding: $spacing;
+    }
   }
 }
 
