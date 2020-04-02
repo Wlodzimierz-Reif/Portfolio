@@ -282,11 +282,6 @@ header .icon span {
   }
 }
 
-#hobby {
-  background-color: #0e0d0d;
-  color: #f0f0f0;
-}
-
 #portfolio {
   min-height: 110vh;
   -webkit-box-pack: center;
