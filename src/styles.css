@@ -71,7 +71,7 @@ header #logo {
 }
 
 header #logo * {
-  font-family: "Inconsolata", monospace;
+  font-family: "Consolas Inconsolata", monospace;
 }
 
 header #logo .tag {
