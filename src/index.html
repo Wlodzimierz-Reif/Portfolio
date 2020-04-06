@@ -5,16 +5,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <link rel="stylesheet" href="./styles.css" />
+    <script src="./script.js" async defer></script>
     <script
       src="https://kit.fontawesome.com/50517c787c.js"
       crossorigin="anonymous"
     ></script>
     <link
       href="https://fonts.googleapis.com/css?family=Nunito:400,700&display=swap"
-      rel="stylesheet"
-    />
-    <link
-      href="https://fonts.googleapis.com/css?family=Dancing+Script&display=swap"
       rel="stylesheet"
     />
     <link
@@ -48,7 +45,6 @@
         <a href="#home" class="link">Home</a>
         <a href="#about" class="link">About</a>
         <a href="#portfolio" class="link">Portfolio</a>
-        <a href="#contact" class="link">Contact</a>
       </div>
 
       <a href="javascript:void(0);" class="icon" onclick="myFunction()">
@@ -57,7 +53,7 @@
     </header>
 
     <section class="jumbotron">
-      <h1>Hi, I am Wlodek</h1>
+      <h1>Hello, I'm Wlodzimierz Reif</h1>
       <h3>Developer in development</h3>
       <nav>
         <a href="#portfolio" class="btn-primary">My projects</a>
@@ -71,7 +67,7 @@
         to become web developer in the nearset future
       </h3>
       <div class="progress-bar blue stripes">
-        <span style="width: 50%"></span>
+        <span style="width: 50%;"></span>
         <div class="completion">
           <p id="completion">5% completed</p>
           <p id="incompletion">95% incompleted</p>
@@ -100,171 +96,133 @@
     </section>
 
     <section id="portfolio">
-      <div class="project">
-        <img src="./images/morse-code.jpg" alt="" />
-        <h3>
-          Morse code game
-        </h3>
-        <div class="caption">
-          <p>
-            Simple morse code translator and game based on it. Next step will be
-            adding scoreboard using firestore
-          </p>
-          <p>HTML, CSS, Javascript</p>
-          <div>
-            <a
-              href="https://wlodzimierz-reif.github.io/morse-code-challenge/"
-              target="_blank"
-              class="btn-primary"
-              >Go to</a
-            >
-            <a
-              href="https://github.com/Wlodzimierz-Reif/morse-code-challenge"
-              target="_blank"
-              class="btn-secondary"
-              >Github</a
-            >
+      <h2>PORTFOLIO</h2>
+      <div id="portfolio-grid">
+        <div class="project">
+          <img src="./images/morse-code.jpg" alt="" />
+          <h3>
+            Morse code game
+          </h3>
+          <div class="caption">
+            <p>
+              Simple morse code translator and game based on it. Next step will
+              be adding scoreboard using firestore
+            </p>
+            <p>HTML, CSS, Javascript</p>
+            <div>
+              <a
+                href="https://wlodzimierz-reif.github.io/morse-code-challenge/"
+                target="_blank"
+                class="btn-primary"
+                >Go to</a
+              >
+              <a
+                href="https://github.com/Wlodzimierz-Reif/morse-code-challenge"
+                target="_blank"
+                class="btn-secondary"
+                >Github</a
+              >
+            </div>
           </div>
         </div>
-      </div>
 
-      <div class="project">
-        <img src="./images/alien.png" alt="" />
-        <h3>
-          Hostile aliens
-        </h3>
-        <div class="caption">
-          <p>
-            Game based on concept of a class and inheritance
-          </p>
-          <p>HTML, CSS, JS, OOP</p>
-          <div>
-            <a
-              href="https://wlodzimierz-reif.github.io/space-invaders/"
-              target="_blank"
-              class="btn-primary"
-              >Go to</a
-            >
-            <a
-              href="https://github.com/Wlodzimierz-Reif/space-invaders"
-              target="_blank"
-              class="btn-secondary"
-              >Github</a
-            >
+        <div class="project">
+          <img src="./images/alien.png" alt="" />
+          <h3>
+            Hostile aliens
+          </h3>
+          <div class="caption">
+            <p>
+              Game based on concept of a class and inheritance
+            </p>
+            <p>HTML, CSS, JS, OOP</p>
+            <div>
+              <a
+                href="https://wlodzimierz-reif.github.io/space-invaders/"
+                target="_blank"
+                class="btn-primary"
+                >Go to</a
+              >
+              <a
+                href="https://github.com/Wlodzimierz-Reif/space-invaders"
+                target="_blank"
+                class="btn-secondary"
+                >Github</a
+              >
+            </div>
           </div>
         </div>
-      </div>
 
-      <div class="project">
-        <img src="./images/eye.png" alt="" />
-        <h3>
-          Hall of faces
-        </h3>
-        <div class="caption">
-          <p>
-            Application build using React and calling external API
-          </p>
-          <p>React, API</p>
-          <div>
-            <a
-              href="https://test.wreif.website/"
-              target="_blank"
-              class="btn-primary"
-              >Go to</a
-            >
-            <a
-              href="https://github.com/Wlodzimierz-Reif/create-react-shea"
-              target="_blank"
-              class="btn-secondary"
-              >Github</a
-            >
+        <div class="project">
+          <img src="./images/eye.png" alt="" />
+          <h3>
+            Hall of faces
+          </h3>
+          <div class="caption">
+            <p>
+              Application build using React and calling external API
+            </p>
+            <p>React, API</p>
+            <div>
+              <a
+                href="https://test.wreif.website/"
+                target="_blank"
+                class="btn-primary"
+                >Go to</a
+              >
+              <a
+                href="https://github.com/Wlodzimierz-Reif/create-react-shea"
+                target="_blank"
+                class="btn-secondary"
+                >Github</a
+              >
+            </div>
           </div>
         </div>
-      </div>
 
-      <div class="project">
-        <img src="./images/pink-panther.jpg" alt="" />
-        <h3>
-          The Pink Panther List
-        </h3>
-        <div class="caption">
-          <p>
-            To do list build in React using Google Authentication and Firestore
-            database
-          </p>
-          <p>React, Database, Authorisation/Authentication</p>
-          <div>
-            <a
-              href="https://todolist.wreif.website/"
-              target="_blank"
-              class="btn-primary"
-              >Go to</a
-            >
-            <a
-              href="https://github.com/Wlodzimierz-Reif/to-do-list"
-              target="_blank"
-              class="btn-secondary"
-              >Github</a
-            >
+        <div class="project">
+          <img src="./images/pink-panther.jpg" alt="" />
+          <h3>
+            The Pink Panther List
+          </h3>
+          <div class="caption">
+            <p>
+              To do list build in React using Google Authentication and
+              Firestore database
+            </p>
+            <p>React, Database, Authorisation/Authentication</p>
+            <div>
+              <a
+                href="https://todolist.wreif.website/"
+                target="_blank"
+                class="btn-primary"
+                >Go to</a
+              >
+              <a
+                href="https://github.com/Wlodzimierz-Reif/to-do-list"
+                target="_blank"
+                class="btn-secondary"
+                >Github</a
+              >
+            </div>
           </div>
         </div>
-      </div>
-    </section>
-
-    <section id="contact">
-      <div class="form">
-        <form>
-          <input
-            type="text"
-            id="name"
-            name="name"
-            placeholder="Your name"
-            required
-          />
-          <input
-            type="email"
-            id="email"
-            name="email"
-            placeholder="Your email"
-            required
-          />
-          <textarea
-            name="text"
-            id="text"
-            cols="40"
-            rows="15"
-            placeholder="Type your message"
-            required
-          ></textarea>
-          <input type="submit" class="submit" />
-        </form>
       </div>
     </section>
 
     <footer>
-      <ul>
-        <li>
-          <a href="https://www.facebook.com/wlodzimierzreif"
-            ><span class="fab fa-facebook fa-2x"></span
-          ></a>
-        </li>
-        <li>
-          <a href="https://www.linkedin.com/in/włodzimierz-reif-8678b017b"
-            ><span class="fab fa-linkedin fa-2x"></span
-          ></a>
-        </li>
-        <li>
-          <a href="https://github.com/Wlodzimierz-Reif/Personal-Website"
-            ><span class="fab fa-github fa-2x"></span
-          ></a>
-        </li>
-      </ul>
-      <p>
-        <span class="fas fa-copyright"></span> 2020 by Wlodzimierz Reif. All
-        Rights Reserved
-      </p>
+      <div>
+        <a href="mailto:wlodzimierzreif<code>@</code>gmail.com" target="_blank"
+          ><span class="fas fa-at fa-2x"></span
+        ></a>
+        <a href="https://uk.linkedin.com/in/wlodzimierz-reif" target="blank"
+          ><span class="fab fa-linkedin fa-2x"></span
+        ></a>
+        <a href="https://github.com/Wlodzimierz-Reif" target="blank"
+          ><span class="fab fa-github fa-2x"></span
+        ></a>
+      </div>
+      <p><span class="fas fa-copyright"></span> 2020 by Wlodzimierz Reif</p>
     </footer>
-
-    <script src="./script.js"></script>
   </body>
 </html>

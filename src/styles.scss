@@ -62,13 +62,13 @@ a {
 
 .hidden {
   visibility: hidden !important;
-  opacity: 0;
+  opacity: 0 !important;
+  transition: 0.5s;
 }
 
 section {
   width: 100%;
-  // margin: $spacing;
-  padding: $spacing * 20;
+  padding: $spacing * 10 0;
 }
 
 // HEADER
@@ -91,8 +91,7 @@ header {
     top: 0;
 
     * {
-      // font-family: "Consolas";
-      font-family: "Consolas Inconsolata", monospace;
+      font-family: "Consolas Inconsolata Courier New", monospace, sans-serif;
     }
 
     .tag {
@@ -109,9 +108,10 @@ header {
     right: 5px;
     position: fixed;
     background-color: $secondary-transparent;
-    // visibility: visible;
-    // opacity: 1;
+    visibility: visible;
+    opacity: 1;
     z-index: 1;
+    transition: 0.5s;
 
     a {
       position: relative;
@@ -275,122 +275,107 @@ header {
 
 #portfolio {
   min-height: 110vh;
-  justify-content: center;
-  display: grid;
-  align-content: space-evenly;
-  // grid-template-rows: 1fr;
-  grid-gap: $spacing * 3;
   color: $primary-color;
+  padding-top: 0;
 
-  .project {
-    height: 250px;
-    width: 250px;
-    position: relative;
-    // border: 1px solid green;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    box-shadow: 0 0 10px $primary-color;
-    border-radius: 20px;
-    overflow: hidden;
-    background-color: $secondary-color;
+  h2 {
+    text-align: center;
+    padding: $spacing * 5;
+  }
 
-    &:hover .caption {
-      opacity: 1;
-      visibility: visible;
-    }
+  #portfolio-grid {
+    display: grid;
+    justify-content: center;
+    align-content: space-evenly;
+    grid-gap: $spacing * 3;
 
-    img {
-      width: 100%;
-    }
-
-    h3 {
-      text-align: center;
-      color: $primary-color;
-      margin-bottom: $spacing;
-    }
-
-    .caption {
-      visibility: hidden;
-      opacity: 0;
-      position: absolute;
-      top: 0;
-      left: 0;
-      height: 100%;
-      width: 100%;
-      // background-color: $secondary-transparent;
-      background: radial-gradient($secondary-transparent, $secondary-color);
-
+    .project {
+      height: 250px;
+      width: 250px;
+      position: relative;
+      // border: 1px solid green;
       display: flex;
       flex-direction: column;
-      align-items: center;
       justify-content: space-between;
-      padding-bottom: $spacing * 2;
-      transition: 0.3s;
+      box-shadow: 0 0 10px $primary-color;
+      border-radius: 20px;
+      overflow: hidden;
+      background-color: $secondary-color;
 
-      p {
+      &:hover .caption {
+        opacity: 1;
+        visibility: visible;
+      }
+
+      img {
+        width: 100%;
+      }
+
+      h3 {
         text-align: center;
-        padding: $spacing;
-      }
-      .btn-primary {
-        @include btn-primary;
-        margin: $spacing;
+        color: $primary-color;
+        margin-bottom: $spacing;
       }
 
-      .btn-secondary {
-        @include btn-secondary;
+      .caption {
+        visibility: hidden;
+        opacity: 0;
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 100%;
+        width: 100%;
+        // background-color: $secondary-transparent;
+        background: radial-gradient($secondary-transparent, $secondary-color);
+
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-between;
+        padding-bottom: $spacing * 2;
+        transition: 0.3s;
+
+        p {
+          text-align: center;
+          padding: $spacing;
+          // background-color: black;
+        }
+        .btn-primary {
+          @include btn-primary;
+          margin: $spacing;
+        }
+
+        .btn-secondary {
+          @include btn-secondary;
+        }
       }
     }
   }
 }
 
-// CONTACT
-// CONTACT
-// CONTACT
-
-#contact {
-  // min-height: 110vh;
-  background-color: $primary-color;
-  color: $secondary-color;
-  padding: 0;
-  margin: 0;
+footer {
+  height: 20vh;
   display: flex;
   flex-direction: column;
-  align-items: center;
-  padding: $spacing * 10;
-
-  form {
+  justify-content: space-evenly;
+  * {
+    color: $primary-color;
+  }
+  div {
     display: flex;
-    flex-direction: column;
-    align-items: center;
-
-    * {
-      background-color: $primary-color;
-      border: none;
-      border-bottom: 1px $secondary-color solid;
-      color: $secondary-color;
-      margin: $spacing;
-      input:-webkit-autofill {
-        -webkit-box-shadow: 0 0 0px 1000px $secondary-color inset;
-        -webkit-text-fill-color: $primary-color !important;
-      }
-    }
-    .submit {
-      cursor: pointer;
-      border: 1px solid $secondary-color;
-      padding: $spacing;
-    }
+    flex-direction: row;
+    justify-content: space-evenly;
   }
 }
 
 @media only screen and (min-width: 768px) {
-  #portfolio {
+  #portfolio-grid {
     grid-template-columns: auto auto;
   }
 }
 
 @media only screen and (min-width: 1024px) {
-  #portfolio {
+  #portfolio-grid {
     grid-template-columns: auto auto auto;
   }
 }
