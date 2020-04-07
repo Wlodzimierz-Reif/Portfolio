@@ -289,6 +289,9 @@ header {
     align-content: space-evenly;
     grid-gap: $spacing * 3;
 
+    #vojo {
+      // background-color: #f2e4d0;
+    }
     .project {
       height: 250px;
       width: 250px;
@@ -297,6 +300,7 @@ header {
       display: flex;
       flex-direction: column;
       justify-content: space-between;
+      align-items: center;
       box-shadow: 0 0 10px $primary-color;
       border-radius: 20px;
       overflow: hidden;
@@ -308,7 +312,8 @@ header {
       }
 
       img {
-        width: 100%;
+        width: 250px;
+        height: 200px;
       }
 
       h3 {
