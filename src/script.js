@@ -23,7 +23,7 @@ const toggleSection = () => {
   if (x.classList.contains('slideup')) {
     x.classList.remove('slideup');
     x.classList.add("slidedown");
-    setTimeout(() => x.scrollIntoView(), 750);
+    setTimeout(() => x.scrollIntoView(), 500);
   } else {
     x.classList.remove("slidedown");
     x.classList.add('slideup');
