@@ -30,21 +30,35 @@
       href="https://fonts.googleapis.com/css?family=Raleway&display=swap"
       rel="stylesheet"
     />
+    <link rel="icon" type="image/png" href="./images/favicon.png" />
     <title>Wlodzimierz Reif</title>
   </head>
+
   <body>
     <header id="home">
-      <a href="#home" id="logo">
+      <p id="logo">
         <span class="tag">&#60;</span>dev<span class="tag">&#62;</span
         ><span class="name">WReif</span><span class="tag">&#60;/</span>dev<span
           class="tag"
           >&#62;</span
-        ></a
-      >
+        >
+      </p>
+      <div id="contact">
+        <a href="mailto:wlodzimierzreif<code>@</code>gmail.com" target="_blank"
+          ><span class="contact-ico fas fa-at fa-2x"></span
+        ></a>
+        <a href="https://uk.linkedin.com/in/wlodzimierz-reif" target="blank"
+          ><span class="contact-ico fab fa-linkedin fa-2x"></span
+        ></a>
+        <a href="https://github.com/Wlodzimierz-Reif" target="blank"
+          ><span class="contact-ico fab fa-github fa-2x"></span
+        ></a>
+      </div>
       <div id="links" class="hidden" onclick="myFunction()">
         <a href="#home" class="link">Home</a>
-        <a href="#about" class="link">About</a>
         <a href="#portfolio" class="link">Portfolio</a>
+        <a href="#about" class="link">About</a>
+        <a href="#home" class="link" onclick="scrollFocus()">Contact</a>
       </div>
 
       <a href="javascript:void(0);" class="icon" onclick="myFunction()">
@@ -53,46 +67,15 @@
     </header>
 
     <section class="jumbotron">
-      <h1>Hello, I'm Wlodzimierz Reif</h1>
-      <h3>Developer in development</h3>
-      <nav>
-        <a href="#portfolio" class="btn-primary">My projects</a>
-        <a href="#contact" class="btn-secondary">Hire me</a>
-      </nav>
-    </section>
+      <div>
+        <h1>Hello, I'm Wlodzimierz Reif</h1>
+        <h3>Junior Software Developer</h3>
+      </div>
 
-    <section id="about">
-      <h3>
-        I am Bristol _nology student from January intake and I am doing my best
-        to become web developer in the nearset future
-      </h3>
-      <div class="progress-bar blue stripes">
-        <span style="width: 50%;"></span>
-        <div class="completion">
-          <p id="completion">5% completed</p>
-          <p id="incompletion">95% incompleted</p>
-        </div>
+      <div>
+        <a href="#portfolio" class="btn-primary">My projects</a>
+        <a onclick="focusAttention()" class="btn-secondary">Contact me</a>
       </div>
-      <div id="image">
-        <img src="./images/wlodzimierz-reif.png" alt="" />
-      </div>
-      <h2>About me</h2>
-      <p>
-        Until now I could describe my 30 years life in many ways. As
-        professional classical musician. As a husband and father of two lovely
-        boys. As a man who at age of 27 left his home country for good to start
-        a new, better life in place a thousand miles away. As a professional
-        who, in seven years, changed his career path five times starting from
-        worlds famous concert halls, going through world most famous fast food
-        restaurant(I'm lovin' it) and best known German discount retailer shops
-        (Just a Lidl further...). Considering my sons growing apetite it turn
-        out to be nessesary to find a new, better paid job so I got an LGV
-        licence and for over a year I've been causing irreversible damage to our
-        planet each and every day. All that time when I was working 60 hours a
-        week I was looking for an opportunity to get a proper job and now this
-        opportunity arise. I became _nology student with high hopes that this
-        will be my first step on my road to professional succes.
-      </p>
     </section>
 
     <section id="portfolio">
@@ -100,7 +83,7 @@
 
       <div id="portfolio-grid">
         <div class="project" id="vojo">
-          <img src="./images/logo.png" alt="" />
+          <img src="./images/vojo.png" alt="" />
           <h3>
             Vojo
           </h3>
@@ -117,7 +100,8 @@
                 >Go to</a
               >
               <a
-                href="https://github.com/nology-tech/vojo"
+                href="https://github.com/nology-tech/vojo
+                "
                 target="_blank"
                 class="btn-secondary"
                 >Github</a
@@ -210,7 +194,7 @@
         </div>
 
         <div class="project">
-          <img src="./images/eye.png" alt="" />
+          <img src="./images/eye.jpg" alt="" />
           <h3>
             Hall of faces
           </h3>
@@ -238,18 +222,67 @@
       </div>
     </section>
 
-    <footer>
-      <div>
-        <a href="mailto:wlodzimierzreif<code>@</code>gmail.com" target="_blank"
-          ><span class="fas fa-at fa-2x"></span
-        ></a>
-        <a href="https://uk.linkedin.com/in/wlodzimierz-reif" target="blank"
-          ><span class="fab fa-linkedin fa-2x"></span
-        ></a>
-        <a href="https://github.com/Wlodzimierz-Reif" target="blank"
-          ><span class="fab fa-github fa-2x"></span
-        ></a>
+    <section id="about">
+      <!-- <h3>
+        I am Bristol _nology student from January intake and I am doing my best
+        to become web developer in the nearset future
+      </h3>
+      <div class="progress-bar blue stripes">
+        <span style="width: 50%;"></span>
+        <div class="completion">
+          <p id="completion">5% completed</p>
+          <p id="incompletion">95% incompleted</p>
+        </div>
+      </div> -->
+
+      <div id="image">
+        <img src="./images/wlodzimierz-reif.png" alt="" />
       </div>
+      <div id="skills">
+        <h2>Skills</h2>
+        <div id="skills-grid">
+          <span class="fab fa-html5"></span>
+          <span class="fab fa-css3-alt"></span>
+          <span class="fab fa-sass"></span>
+          <span class="fab fa-js-square"></span>
+          <span class="fab fa-react"></span>
+          <span class="fab fa-github"></span>
+          <span class="fab fa-bootstrap"></span>
+          <span class="fab fa-yarn"></span>
+        </div>
+      </div>
+      <div id="text">
+        <p id="info" class="text">
+          I am junior software developer trained by
+          <a href="https://https://nology.io/" id="nology">_nology</a>
+          and devoted to delivering clean and functional code. I have recently
+          done a career change and challenged myself with 12 week fully
+          immersive front-end software developer course. I am currently open for
+          job opportunities.
+          <span onclick="{toggleSection()}" id="more-info">Find out more</span>
+        </p>
+        <p id="additional-info" class="slideup text">
+          So far I could have described 30 years of my life in many ways. As a
+          professional classical musician. As a husband and father of two lovely
+          boys. As an imigrant who at age of 27 left his home country to start a
+          new, better life in place a thousand miles away. As a professional,
+          who in seven years, changed his career path five times starting from
+          famous concert halls, going through world's famous fast food
+          restaurant (I'm lovin' it) and German discount retailer (Just a Lidl
+          further...). Considering growing apetite of my sons I looked for new,
+          better paid job so I got myself a lorry driving licence and for over a
+          year I've been burning thousands of gallons of fuel causing
+          irreversible damage to our planet. All that time I was seeking better
+          perspective for my professional future and recently this opportunity
+          has arisen. I made a first step and became _nology student with high
+          hopes and expectations. And... I haven't looked back since then and
+          have never regreted my decision.
+        </p>
+      </div>
+    </section>
+
+    <footer>
+      <div></div>
       <p><span class="fas fa-copyright"></span> 2020 by Wlodzimierz Reif</p>
     </footer>
   </body>

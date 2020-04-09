@@ -46,9 +46,72 @@ a:hover {
   transition: 0.5s;
 }
 
+.slideup,
+.slidedown {
+  max-height: 0;
+  overflow-y: hidden;
+  -webkit-transition: max-height 1s ease-in-out;
+  transition: max-height 1s ease-in-out;
+}
+
+.slidedown {
+  max-height: 100vh;
+}
+
 section {
   width: 100%;
   padding: 80px 0;
+}
+
+.fade {
+  -webkit-animation: fade 1s forwards;
+          animation: fade 1s forwards;
+}
+
+@-webkit-keyframes fade {
+  25% {
+    opacity: 0.25;
+    color: red;
+    font-size: 3em;
+  }
+  50% {
+    opacity: 1;
+    color: white;
+    font-size: 2em;
+  }
+  75% {
+    opacity: 0.25;
+    color: red;
+    font-size: 3em;
+  }
+  100% {
+    opacity: 1;
+    color: white;
+    font-size: 2em;
+  }
+}
+
+@keyframes fade {
+  25% {
+    opacity: 0.25;
+    color: red;
+    font-size: 3em;
+  }
+  50% {
+    opacity: 1;
+    color: white;
+    font-size: 2em;
+  }
+  75% {
+    opacity: 0.25;
+    color: red;
+    font-size: 3em;
+  }
+  100% {
+    opacity: 1;
+    color: white;
+    font-size: 2em;
+  }
 }
 
 header {
@@ -82,6 +145,22 @@ header #logo .tag {
 
 header #logo .name {
   color: white;
+}
+
+header #contact {
+  position: absolute;
+  left: 0;
+  top: 50px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
 }
 
 header #links {
@@ -135,18 +214,31 @@ header .icon span {
 }
 
 .jumbotron {
-  text-align: center;
   padding: 40px;
   height: 100vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
-.jumbotron h1,
-.jumbotron h3 {
+.jumbotron div h1,
+.jumbotron div h3 {
   padding: 24px;
   color: #f0f0f0;
+  text-align: center;
 }
 
-.jumbotron nav {
+.jumbotron div {
   margin-top: 40px;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -163,37 +255,39 @@ header .icon span {
           align-items: center;
 }
 
-.jumbotron nav a {
+.jumbotron div a {
   border: 2px solid black;
   margin: 16px;
 }
 
-.jumbotron nav a:hover {
+.jumbotron div a:hover {
   color: #ffd059;
 }
 
-.jumbotron nav .btn-primary {
+.jumbotron div .btn-primary {
   border: 1px solid #ffd059;
   border-radius: 5px;
   color: #f0f0f0;
   padding: 8px;
+  cursor: pointer;
 }
 
-.jumbotron nav .btn-primary:hover {
+.jumbotron div .btn-primary:hover {
   background-color: #ffd059;
   color: #0e0d0d;
   -webkit-transition: 0.3s;
   transition: 0.3s;
 }
 
-.jumbotron nav .btn-secondary {
+.jumbotron div .btn-secondary {
   border: 1px solid #f0f0f0;
   border-radius: 5px;
   color: #f0f0f0;
   padding: 8px;
+  cursor: pointer;
 }
 
-.jumbotron nav .btn-secondary:hover {
+.jumbotron div .btn-secondary:hover {
   background-color: #f0f0f0;
   color: #0e0d0d;
   -webkit-transition: 0.3s;
@@ -201,24 +295,17 @@ header .icon span {
 }
 
 #about {
-  min-height: 110vh;
   background-color: #f0f0f0;
-  padding: 8px;
+  padding: 32px 8px 8px 0;
   color: #0e0d0d;
 }
 
-#about div > .completion {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
-  font-size: 0.8em;
+#about h2 {
+  text-align: center;
+  padding: 8px;
 }
 
 #about #image {
-  margin-top: 64px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -228,13 +315,77 @@ header .icon span {
 }
 
 #about #image img {
+  padding: 0;
+  height: 250px;
+  width: 250px;
   border-radius: 20px;
-  width: 200px;
-  height: 200px;
 }
 
-#about p {
-  padding-top: 8px;
+#about #skills #skills-grid {
+  display: -ms-grid;
+  display: grid;
+  justify-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-grid-columns: (50px)[4];
+      grid-template-columns: repeat(4, 50px);
+  row-gap: 16px;
+  -webkit-column-gap: 16px;
+          column-gap: 16px;
+}
+
+#about #skills #skills-grid span {
+  font-size: 40px;
+}
+
+#about #skills #skills-grid .fa-html5:hover {
+  color: red;
+}
+
+#about #skills #skills-grid .fa-css3-alt:hover {
+  color: blue;
+}
+
+#about #skills #skills-grid .fa-sass:hover {
+  color: #cf6c9f;
+}
+
+#about #skills #skills-grid .fa-js-square:hover {
+  color: #e9d54d;
+}
+
+#about #skills #skills-grid .fa-react:hover {
+  color: #5ed4f4;
+}
+
+#about #skills #skills-grid .fa-github:hover {
+  color: black;
+}
+
+#about #skills #skills-grid .fa-bootstrap:hover {
+  color: #543b79;
+}
+
+#about #skills #skills-grid .fa-yarn:hover {
+  color: #2b8ab6;
+}
+
+#about #text .text {
+  font-size: 20px;
+  padding: 8px;
+}
+
+#about #text #more-info {
+  color: #ffd059;
+  cursor: pointer;
+}
+
+#about #text #additional-info {
+  padding: 0 8px;
 }
 
 .progress-bar {
@@ -387,6 +538,7 @@ header .icon span {
   border-radius: 5px;
   color: #f0f0f0;
   padding: 8px;
+  cursor: pointer;
   margin: 8px;
 }
 
@@ -402,6 +554,7 @@ header .icon span {
   border-radius: 5px;
   color: #f0f0f0;
   padding: 8px;
+  cursor: pointer;
 }
 
 #portfolio #portfolio-grid .project .caption .btn-secondary:hover {
@@ -411,41 +564,37 @@ header .icon span {
   transition: 0.3s;
 }
 
-footer {
-  height: 20vh;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  -webkit-box-pack: space-evenly;
-      -ms-flex-pack: space-evenly;
-          justify-content: space-evenly;
-}
-
-footer * {
-  color: #f0f0f0;
-}
-
-footer div {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: row;
-          flex-direction: row;
-  -webkit-box-pack: space-evenly;
-      -ms-flex-pack: space-evenly;
-          justify-content: space-evenly;
-}
-
 @media only screen and (min-width: 768px) {
   #portfolio-grid {
     -ms-grid-columns: auto auto;
         grid-template-columns: auto auto;
+  }
+  #about {
+    display: -ms-grid;
+    display: grid;
+        grid-template-areas: "photo text" "skills text";
+    row-gap: 16px;
+    -webkit-column-gap: 16px;
+            column-gap: 16px;
+    -webkit-box-align: start;
+        -ms-flex-align: start;
+            align-items: flex-start;
+  }
+  #about #image {
+    -ms-grid-row: 1;
+    -ms-grid-column: 1;
+    grid-area: photo;
+  }
+  #about #skills {
+    -ms-grid-row: 2;
+    -ms-grid-column: 1;
+    grid-area: skills;
+  }
+  #about #text {
+    -ms-grid-row: 1;
+    -ms-grid-row-span: 2;
+    -ms-grid-column: 2;
+    grid-area: text;
   }
 }
 

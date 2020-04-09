@@ -19,6 +19,7 @@ html {
   // background-color: $secondary-transparent;
   color: $primary-color;
   padding: $spacing;
+  cursor: pointer;
   &:hover {
     background-color: $break-color;
     color: $secondary-color;
@@ -33,6 +34,7 @@ html {
   // background-color: $primary-transparent;
   color: $primary-color;
   padding: $spacing;
+  cursor: pointer;
   &:hover {
     background-color: $primary-color;
     color: $secondary-color;
@@ -57,6 +59,9 @@ a {
   &:hover {
     color: $break-color;
     transition: 0.3s;
+    // ::after {
+    //   transition: 0.3s;
+    // }
   }
 }
 
@@ -66,9 +71,50 @@ a {
   transition: 0.5s;
 }
 
+.slideup,
+.slidedown {
+  max-height: 0;
+  overflow-y: hidden;
+  -webkit-transition: max-height 1s ease-in-out;
+  -moz-transition: max-height 1s ease-in-out;
+  -o-transition: max-height 1s ease-in-out;
+  transition: max-height 1s ease-in-out;
+}
+
+.slidedown {
+  max-height: 100vh;
+}
+
 section {
   width: 100%;
   padding: $spacing * 10 0;
+}
+
+.fade {
+  animation: fade 1s forwards;
+}
+
+@keyframes fade {
+  25% {
+    opacity: 0.25;
+    color: red;
+    font-size: 3em;
+  }
+  50% {
+    opacity: 1;
+    color: white;
+    font-size: 2em;
+  }
+  75% {
+    opacity: 0.25;
+    color: red;
+    font-size: 3em;
+  }
+  100% {
+    opacity: 1;
+    color: white;
+    font-size: 2em;
+  }
 }
 
 // HEADER
@@ -101,6 +147,15 @@ header {
     .name {
       color: white;
     }
+  }
+
+  #contact {
+    position: absolute;
+    left: 0;
+    top: 50px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
   }
 
   #links {
@@ -148,17 +203,23 @@ header {
 }
 
 .jumbotron {
-  text-align: center;
   padding: $spacing * 5;
   height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
 
-  h1,
-  h3 {
-    padding: $spacing * 3;
-    color: $primary-color;
+  div {
+    h1,
+    h3 {
+      padding: $spacing * 3;
+      color: $primary-color;
+      text-align: center;
+    }
   }
 
-  nav {
+  div {
     margin-top: $spacing * 5;
     display: flex;
     flex-direction: column;
@@ -189,31 +250,88 @@ header {
 // ABOUT
 
 #about {
-  min-height: 110vh;
+  // min-height: 110vh;
   background-color: $primary-color;
-  padding: $spacing;
+  padding: $spacing * 4 $spacing $spacing 0;
   color: $secondary-color;
 
-  div > .completion {
-    display: flex;
-    justify-content: space-between;
-    font-size: 0.8em;
+  // * {
+  //   padding: $spacing;
+  // }
+
+  h2 {
+    text-align: center;
+    padding: $spacing;
   }
 
   #image {
-    margin-top: $spacing * 8;
     display: flex;
     justify-content: center;
-
     img {
+      padding: 0;
+      height: 250px;
+      width: 250px;
       border-radius: 20px;
-      width: 200px;
-      height: 200px;
+    }
+  }
+  #skills {
+    #skills-grid {
+      display: grid;
+      justify-items: center;
+      justify-content: center;
+      align-items: center;
+      grid-template-columns: repeat(4, 50px);
+      row-gap: $spacing * 2;
+      column-gap: $spacing * 2;
+
+      span {
+        font-size: $spacing * 5;
+      }
+
+      .fa-html5:hover {
+        color: red;
+      }
+      .fa-css3-alt:hover {
+        color: blue;
+      }
+      .fa-sass:hover {
+        color: #cf6c9f;
+      }
+      .fa-js-square:hover {
+        color: #e9d54d;
+      }
+      .fa-react:hover {
+        color: #5ed4f4;
+      }
+      .fa-github:hover {
+        color: black;
+      }
+      .fa-bootstrap:hover {
+        color: #543b79;
+      }
+      .fa-yarn:hover {
+        color: #2b8ab6;
+      }
     }
   }
 
-  p {
-    padding-top: $spacing;
+  #text {
+    .text {
+      font-size: $spacing * 2.5;
+      padding: $spacing;
+      // #info {
+      // font-size: $spacing * 2.5;
+      // }
+    }
+
+    #more-info {
+      color: $break-color;
+      cursor: pointer;
+    }
+
+    #additional-info {
+      padding: 0 $spacing;
+    }
   }
 }
 
@@ -358,24 +476,35 @@ header {
   }
 }
 
-footer {
-  height: 20vh;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-evenly;
-  * {
-    color: $primary-color;
-  }
-  div {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-evenly;
-  }
-}
-
 @media only screen and (min-width: 768px) {
   #portfolio-grid {
     grid-template-columns: auto auto;
+  }
+  #about {
+    display: grid;
+    grid-template-areas:
+      "photo text"
+      "skills text";
+    row-gap: $spacing * 2;
+    column-gap: $spacing * 2;
+    align-items: flex-start;
+
+    #image {
+      grid-area: photo;
+      // img {
+      //   border-radius: 20px;
+      //   width: 200px;
+      //   height: 200px;
+      // }
+    }
+
+    #skills {
+      grid-area: skills;
+    }
+
+    #text {
+      grid-area: text;
+    }
   }
 }
 
