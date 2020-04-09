@@ -11,6 +11,9 @@ html {
   // border: 1px solid red;
   // font-family: "Nunito", sans-serif;
   font-family: "Raleway", sans-serif;
+  &::selection {
+    color: $break-color;
+  }
 }
 
 @mixin btn-primary {
@@ -56,9 +59,9 @@ body {
 
 a {
   text-decoration: none;
+  transition: 0.3s;
   &:hover {
     color: $break-color;
-    transition: 0.3s;
     // ::after {
     //   transition: 0.3s;
     // }
@@ -152,9 +155,9 @@ header {
   #contact {
     position: absolute;
     left: 0;
-    top: 50px;
+    top: 30px;
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     justify-content: space-evenly;
   }
 
@@ -220,7 +223,7 @@ header {
   }
 
   div {
-    margin-top: $spacing * 5;
+    margin: $spacing * 5 0;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -252,12 +255,8 @@ header {
 #about {
   // min-height: 110vh;
   background-color: $primary-color;
-  padding: $spacing * 4 $spacing $spacing 0;
+  padding: $spacing * 4 0 $spacing * 4 0;
   color: $secondary-color;
-
-  // * {
-  //   padding: $spacing;
-  // }
 
   h2 {
     text-align: center;
@@ -267,6 +266,8 @@ header {
   #image {
     display: flex;
     justify-content: center;
+    padding: $spacing;
+
     img {
       padding: 0;
       height: 250px;
@@ -274,6 +275,7 @@ header {
       border-radius: 20px;
     }
   }
+
   #skills {
     #skills-grid {
       display: grid;
@@ -313,20 +315,33 @@ header {
         color: #2b8ab6;
       }
     }
+
+    #skills-list {
+      justify-content: center;
+      padding: $spacing;
+      // margin: auto;
+      // width: 250px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
   }
 
   #text {
     .text {
       font-size: $spacing * 2.5;
       padding: $spacing;
-      // #info {
-      // font-size: $spacing * 2.5;
-      // }
-    }
 
-    #more-info {
-      color: $break-color;
-      cursor: pointer;
+      .link {
+        color: $secondary-color;
+        font-weight: bold;
+        cursor: pointer;
+        transition: 0.3s;
+
+        &:hover {
+          color: $break-color;
+        }
+      }
     }
 
     #additional-info {
@@ -407,9 +422,6 @@ header {
     align-content: space-evenly;
     grid-gap: $spacing * 3;
 
-    #vojo {
-      // background-color: #f2e4d0;
-    }
     .project {
       height: 250px;
       width: 250px;
@@ -476,12 +488,20 @@ header {
   }
 }
 
+footer {
+  padding: $spacing;
+  p {
+    color: $primary-color;
+  }
+}
+
 @media only screen and (min-width: 768px) {
   #portfolio-grid {
     grid-template-columns: auto auto;
   }
   #about {
     display: grid;
+    // grid-template-rows: minmax(180px, 380px);
     grid-template-areas:
       "photo text"
       "skills text";
@@ -490,12 +510,8 @@ header {
     align-items: flex-start;
 
     #image {
+      // min-height: 466px;
       grid-area: photo;
-      // img {
-      //   border-radius: 20px;
-      //   width: 200px;
-      //   height: 200px;
-      // }
     }
 
     #skills {

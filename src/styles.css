@@ -10,6 +10,14 @@ html {
   font-family: "Raleway", sans-serif;
 }
 
+*::-moz-selection {
+  color: #ffd059;
+}
+
+*::selection {
+  color: #ffd059;
+}
+
 body {
   background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(0, 0, 0, 0.5)), to(rgba(0, 0, 0, 0.5))), url("./images/background.jpg");
   background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("./images/background.jpg");
@@ -31,12 +39,12 @@ body {
 
 a {
   text-decoration: none;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
 }
 
 a:hover {
   color: #ffd059;
-  -webkit-transition: 0.3s;
-  transition: 0.3s;
 }
 
 .hidden {
@@ -150,14 +158,14 @@ header #logo .name {
 header #contact {
   position: absolute;
   left: 0;
-  top: 50px;
+  top: 30px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: vertical;
+  -webkit-box-orient: horizontal;
   -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
+      -ms-flex-direction: row;
+          flex-direction: row;
   -webkit-box-pack: space-evenly;
       -ms-flex-pack: space-evenly;
           justify-content: space-evenly;
@@ -239,7 +247,7 @@ header .icon span {
 }
 
 .jumbotron div {
-  margin-top: 40px;
+  margin: 40px 0;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -296,7 +304,7 @@ header .icon span {
 
 #about {
   background-color: #f0f0f0;
-  padding: 32px 8px 8px 0;
+  padding: 32px 0 32px 0;
   color: #0e0d0d;
 }
 
@@ -312,6 +320,7 @@ header .icon span {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
+  padding: 8px;
 }
 
 #about #image img {
@@ -374,14 +383,38 @@ header .icon span {
   color: #2b8ab6;
 }
 
+#about #skills #skills-list {
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  padding: 8px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
 #about #text .text {
   font-size: 20px;
   padding: 8px;
 }
 
-#about #text #more-info {
-  color: #ffd059;
+#about #text .text .link {
+  color: #0e0d0d;
+  font-weight: bold;
   cursor: pointer;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+}
+
+#about #text .text .link:hover {
+  color: #ffd059;
 }
 
 #about #text #additional-info {
@@ -562,6 +595,14 @@ header .icon span {
   color: #0e0d0d;
   -webkit-transition: 0.3s;
   transition: 0.3s;
+}
+
+footer {
+  padding: 8px;
+}
+
+footer p {
+  color: #f0f0f0;
 }
 
 @media only screen and (min-width: 768px) {
