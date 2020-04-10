@@ -1,4 +1,12 @@
-function myFunction() {
+document.addEventListener("click", event => {
+  const links = document.getElementById("links");
+  const icon = document.getElementById("icon")
+  if (!links.classList.contains("hidden") && !icon.contains(event.target)) {
+    links.classList.add("hidden");
+  }
+})
+
+const toggleMenu = () => {
   const x = document.getElementById("links");
   if (x.classList.contains('hidden')) {
     x.classList.remove('hidden');
@@ -30,13 +38,18 @@ const toggleSection = () => {
   }
 }
 
+
+
+
+// I know it shouldn't be here but it just has has some nostalgic value to me :)
+
 // const date1 = new Date();
 // const date2 = new Date('2020/04/17');
 // const diffTime = Math.abs(date2 - date1);
 // const diffDays = Math.ceil(diffTime / (1000 * 60 * 60 * 24));
 // let percent = Math.floor((81 - diffDays) / 81 * 100);
 
-// const progress = document.querySelector('#about > div > span');
+// const progress = document.querySelector('#progress-bar-inside');
 // progress.style.width = `${percent}%`;
 
 // const completed = document.querySelector('#completion');
