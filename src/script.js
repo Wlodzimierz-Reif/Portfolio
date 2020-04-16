@@ -43,17 +43,17 @@ const toggleSection = () => {
 
 // I know it shouldn't be here but it just has has some nostalgic value to me :)
 
-// const date1 = new Date();
-// const date2 = new Date('2020/04/17');
-// const diffTime = Math.abs(date2 - date1);
-// const diffDays = Math.ceil(diffTime / (1000 * 60 * 60 * 24));
-// let percent = Math.floor((81 - diffDays) / 81 * 100);
+const date1 = new Date();
+const date2 = new Date('2020/04/17');
+const diffTime = Math.abs(date2 - date1);
+const diffDays = Math.ceil(diffTime / (1000 * 60 * 60 * 24));
+let percent = Math.floor((81 - diffDays) / 81 * 100);
 
-// const progress = document.querySelector('#progress-bar-inside');
-// progress.style.width = `${percent}%`;
+const progress = document.querySelector('#progress-bar-inside');
+progress.style.width = `${percent}%`;
 
-// const completed = document.querySelector('#completion');
-// completed.textContent = `${percent}% completed`;
+const completed = document.querySelector('#completion');
+completed.textContent = `${percent}% course completed`;
 
-// const incompleted = document.querySelector('#incompletion');
-// incompleted.textContent = `${100 - percent}% to go`;
+const incompleted = document.querySelector('#incompletion');
+incompleted.textContent = `${100 - percent}% to go`;
