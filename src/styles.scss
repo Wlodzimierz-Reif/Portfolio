@@ -8,7 +8,6 @@ html {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  // font-family: "Nunito", sans-serif;
   font-family: "Raleway", "Nunito", sans-serif;
   &::selection {
     color: $break-color;
@@ -121,11 +120,6 @@ section {
 // HEADER
 
 header {
-  // overflow: hidden;
-  // background-color: transparent;
-  // display: flex;
-  // justify-content: space-between;
-
   #logo {
     text-align: center;
     font-size: $spacing * 2;
@@ -194,7 +188,6 @@ header {
 }
 
 .jumbotron {
-  // padding: $spacing * 5;
   height: 100vh;
   display: flex;
   flex-direction: column;
@@ -211,7 +204,6 @@ header {
   }
 
   div {
-    // margin: $spacing * 5 0;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -228,15 +220,8 @@ header {
     .btn-primary {
       @include btn-primary;
     }
-
-    // .btn-secondary {
-    //   @include btn-secondary;
-    // }
   }
   #contact {
-    // position: absolute;
-    // left: 0;
-    // top: 30px;
     display: flex;
     flex-direction: row;
     justify-content: space-evenly;
@@ -338,7 +323,6 @@ header {
   display: flex;
   flex-direction: column;
   align-items: center;
-  // justify-content: center;
 
   h2 {
     text-align: center;
@@ -410,11 +394,7 @@ header {
       width: 320px;
       padding: $spacing * 2;
       #skills-list {
-        // justify-content: center;
         padding-left: $spacing * 4;
-        // display: flex;
-        // flex-direction: column;
-        // align-items: center;
       }
     }
   }
@@ -439,63 +419,6 @@ header {
     #additional-info {
       padding: 0 $spacing;
     }
-  }
-}
-
-// PROGRESS BAR
-// PROGRESS BAR
-// PROGRESS BAR
-
-.progress-bar {
-  background-color: rgb(153, 153, 153);
-  height: 25px;
-  padding: 5px;
-  width: 40%;
-  min-width: 200px;
-  margin: $spacing * 5 auto;
-  border-radius: 5px;
-  box-shadow: 0 1px 5px #000 inset, 0 1px 0 #444;
-}
-
-.progress-bar span {
-  display: inline-block;
-  height: 100%;
-  border-radius: 3px;
-  box-shadow: 0 1px 0 rgba(255, 208, 89, 0.5) inset;
-  transition: width 0.4s ease-in-out;
-}
-
-.blue span {
-  background-color: rgb(255, 208, 89);
-}
-
-.stripes span {
-  background-size: 30px 30px;
-  background-image: linear-gradient(
-    135deg,
-    rgba(255, 255, 255, 0.15) 25%,
-    transparent 25%,
-    transparent 50%,
-    rgba(255, 255, 255, 0.15) 50%,
-    rgba(255, 255, 255, 0.15) 75%,
-    transparent 75%,
-    transparent
-  );
-  animation: animate-stripes 3s linear infinite;
-}
-
-.completion {
-  display: flex;
-  justify-content: space-between;
-}
-
-@keyframes animate-stripes {
-  0% {
-    background-position: 0 0;
-  }
-
-  100% {
-    background-position: 60px 0;
   }
 }
 
