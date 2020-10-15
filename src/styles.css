@@ -213,6 +213,10 @@ header #icon span {
           align-items: center;
 }
 
+.jumbotron div h1 {
+  font-size: 10vw;
+}
+
 .jumbotron div h1,
 .jumbotron div h3 {
   padding: 24px;
@@ -538,66 +542,6 @@ header #icon span {
 
 #about #text #additional-info {
   padding: 0 8px;
-}
-
-.progress-bar {
-  background-color: #999999;
-  height: 25px;
-  padding: 5px;
-  width: 40%;
-  min-width: 200px;
-  margin: 40px auto;
-  border-radius: 5px;
-  -webkit-box-shadow: 0 1px 5px #000 inset, 0 1px 0 #444;
-          box-shadow: 0 1px 5px #000 inset, 0 1px 0 #444;
-}
-
-.progress-bar span {
-  display: inline-block;
-  height: 100%;
-  border-radius: 3px;
-  -webkit-box-shadow: 0 1px 0 rgba(255, 208, 89, 0.5) inset;
-          box-shadow: 0 1px 0 rgba(255, 208, 89, 0.5) inset;
-  -webkit-transition: width 0.4s ease-in-out;
-  transition: width 0.4s ease-in-out;
-}
-
-.blue span {
-  background-color: #ffd059;
-}
-
-.stripes span {
-  background-size: 30px 30px;
-  background-image: linear-gradient(135deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent);
-  -webkit-animation: animate-stripes 3s linear infinite;
-          animation: animate-stripes 3s linear infinite;
-}
-
-.completion {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
-}
-
-@-webkit-keyframes animate-stripes {
-  0% {
-    background-position: 0 0;
-  }
-  100% {
-    background-position: 60px 0;
-  }
-}
-
-@keyframes animate-stripes {
-  0% {
-    background-position: 0 0;
-  }
-  100% {
-    background-position: 60px 0;
-  }
 }
 
 footer {
