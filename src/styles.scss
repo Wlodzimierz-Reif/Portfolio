@@ -51,6 +51,7 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
+  // font-size: 2vw;
 }
 
 a {
@@ -196,7 +197,10 @@ header {
 
   div {
     h1 {
-      font-size: 10vw;
+      font-size: 8vw;
+    }
+    h3 {
+      font-size: 4vw;
     }
     h1,
     h3 {
@@ -435,13 +439,16 @@ footer {
 
 @media only screen and (min-width: 768px) {
   .jumbotron {
-    h1 {
-      font-size: $spacing * 5;
-    }
-    h3 {
-      font-size: $spacing * 3;
+    div {
+      h1 {
+        font-size: 4vw;
+      }
+      h3 {
+        font-size: 2vw;
+      }
     }
   }
+
   #portfolio {
     #portfolio-grid {
       grid-template-columns: auto auto;

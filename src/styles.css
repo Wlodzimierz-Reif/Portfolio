@@ -214,7 +214,11 @@ header #icon span {
 }
 
 .jumbotron div h1 {
-  font-size: 10vw;
+  font-size: 8vw;
+}
+
+.jumbotron div h3 {
+  font-size: 4vw;
 }
 
 .jumbotron div h1,
@@ -553,11 +557,11 @@ footer p {
 }
 
 @media only screen and (min-width: 768px) {
-  .jumbotron h1 {
-    font-size: 40px;
+  .jumbotron div h1 {
+    font-size: 4vw;
   }
-  .jumbotron h3 {
-    font-size: 24px;
+  .jumbotron div h3 {
+    font-size: 2vw;
   }
   #portfolio #portfolio-grid {
     -ms-grid-columns: auto auto;
