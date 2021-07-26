@@ -1,4 +1,4 @@
-@import "./variables.scss";
+@import './variables.scss';
 
 html {
   scroll-behavior: smooth;
@@ -8,7 +8,7 @@ html {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: "Raleway", "Nunito", sans-serif;
+  font-family: 'Raleway', 'Nunito', sans-serif;
   &::selection {
     color: $break-color;
   }
@@ -42,8 +42,8 @@ html {
 }
 
 body {
-  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
-    url("./images/background.jpg");
+  background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)),
+    url('./images/background.jpg');
   background-attachment: fixed;
   background-position: center;
   background-repeat: no-repeat;
@@ -51,12 +51,11 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
-  // font-size: 2vw;
 }
 
 a {
   text-decoration: none;
-  transition: 0.3s;
+  // transition: 0.8s;
   color: $primary-color;
 
   &:hover {
@@ -67,7 +66,7 @@ a {
 .hidden {
   visibility: hidden !important;
   opacity: 0 !important;
-  transition: 0.5s;
+  // transition: 0.3s;
 }
 
 .slideup,
@@ -116,11 +115,11 @@ section {
   }
 }
 
-// HEADER
-// HEADER
-// HEADER
+// NAV
+// NAV
+// NAV
 
-header {
+nav {
   #logo {
     text-align: center;
     font-size: $spacing * 2;
@@ -131,7 +130,7 @@ header {
     background-image: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2));
 
     * {
-      font-family: "Consolas", "Inconsolata", "Courier New", monospace,
+      font-family: 'Consolas', 'Inconsolata', 'Courier New', monospace,
         sans-serif;
     }
 
@@ -152,7 +151,7 @@ header {
     visibility: visible;
     opacity: 1;
     z-index: 1;
-    transition: 0.5s;
+    transition: 0.3s;
 
     a {
       position: relative;
@@ -179,7 +178,7 @@ header {
     display: flex;
     justify-content: center;
     align-items: center;
-    border-radius: 20px;
+    // border-radius: 20px;
     z-index: 2;
 
     span {
@@ -244,6 +243,7 @@ header {
   min-height: 110vh;
   color: $primary-color;
   padding-top: 0;
+  background-image: linear-gradient(rgba(0, 0, 0, 0), $secondary-color);
 
   h2 {
     text-align: center;
@@ -265,8 +265,6 @@ header {
       flex-direction: column;
       justify-content: space-between;
       align-items: center;
-      box-shadow: 0 0 10px $break-color;
-      border-radius: 20px;
       overflow: hidden;
       background-color: $secondary-color;
 
@@ -283,7 +281,7 @@ header {
       h3 {
         text-align: center;
         color: $primary-color;
-        margin-bottom: $spacing;
+        margin-bottom: $spacing * 2;
       }
 
       .caption {
@@ -324,9 +322,9 @@ header {
 // ABOUT
 
 #about {
-  background-color: $primary-color;
+  background-color: $secondary-color;
   padding: $spacing * 4 0 $spacing * 4 0;
-  color: $secondary-color;
+  color: $primary-color;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -412,7 +410,7 @@ header {
       padding: $spacing;
 
       .link {
-        color: $secondary-color;
+        color: $primary-color;
         font-weight: bold;
         cursor: pointer;
         transition: 0.3s;
@@ -431,6 +429,9 @@ header {
 
 footer {
   padding: $spacing;
+  width: 100vw;
+  background-color: $secondary-color;
+  text-align: center;
 
   p {
     color: $primary-color;
@@ -460,9 +461,9 @@ footer {
     #about-grid {
       display: grid;
       grid-template-areas:
-        "photo text"
-        "skills text"
-        "skills-list text";
+        'photo text'
+        'skills text'
+        'skills-list text';
       row-gap: $spacing * 2;
       column-gap: $spacing * 2;
       align-items: flex-start;

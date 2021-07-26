@@ -7,7 +7,7 @@ html {
   padding: 0;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
-  font-family: "Raleway", "Nunito", sans-serif;
+  font-family: 'Raleway', 'Nunito', sans-serif;
 }
 
 *::-moz-selection {
@@ -19,8 +19,8 @@ html {
 }
 
 body {
-  background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(0, 0, 0, 0.5)), to(rgba(0, 0, 0, 0.5))), url("./images/background.jpg");
-  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("./images/background.jpg");
+  background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(0, 0, 0, 0.3)), to(rgba(0, 0, 0, 0.3))), url("./images/background.jpg");
+  background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url("./images/background.jpg");
   background-attachment: fixed;
   background-position: center;
   background-repeat: no-repeat;
@@ -39,8 +39,6 @@ body {
 
 a {
   text-decoration: none;
-  -webkit-transition: 0.3s;
-  transition: 0.3s;
   color: #f0f0f0;
 }
 
@@ -51,8 +49,6 @@ a:hover {
 .hidden {
   visibility: hidden !important;
   opacity: 0 !important;
-  -webkit-transition: 0.5s;
-  transition: 0.5s;
 }
 
 .slideup,
@@ -123,7 +119,7 @@ section {
   }
 }
 
-header #logo {
+nav #logo {
   text-align: center;
   font-size: 16px;
   color: #2a4da3;
@@ -134,19 +130,19 @@ header #logo {
   background-image: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2));
 }
 
-header #logo * {
-  font-family: "Consolas", "Inconsolata", "Courier New", monospace, sans-serif;
+nav #logo * {
+  font-family: 'Consolas', 'Inconsolata', 'Courier New', monospace, sans-serif;
 }
 
-header #logo .tag {
+nav #logo .tag {
   color: grey;
 }
 
-header #logo .name {
+nav #logo .name {
   color: white;
 }
 
-header #links {
+nav #links {
   top: 5px;
   right: 5px;
   position: fixed;
@@ -154,23 +150,23 @@ header #links {
   visibility: visible;
   opacity: 1;
   z-index: 1;
-  -webkit-transition: 0.5s;
-  transition: 0.5s;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
 }
 
-header #links a {
+nav #links a {
   position: relative;
   min-width: 125px;
 }
 
-header a {
+nav a {
   padding: 8px;
   font-size: 17px;
   display: block;
   color: #f0f0f0;
 }
 
-header #icon {
+nav #icon {
   color: #f0f0f0;
   display: block;
   position: fixed;
@@ -188,11 +184,10 @@ header #icon {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  border-radius: 20px;
   z-index: 2;
 }
 
-header #icon span {
+nav #icon span {
   font-size: 20px;
 }
 
@@ -285,6 +280,8 @@ header #icon span {
   min-height: 110vh;
   color: #f0f0f0;
   padding-top: 0;
+  background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(0, 0, 0, 0)), to(#0e0d0d));
+  background-image: linear-gradient(rgba(0, 0, 0, 0), #0e0d0d);
 }
 
 #portfolio h2 {
@@ -322,9 +319,6 @@ header #icon span {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  -webkit-box-shadow: 0 0 10px #ffd059;
-          box-shadow: 0 0 10px #ffd059;
-  border-radius: 20px;
   overflow: hidden;
   background-color: #0e0d0d;
 }
@@ -342,7 +336,7 @@ header #icon span {
 #portfolio #portfolio-grid .project h3 {
   text-align: center;
   color: #f0f0f0;
-  margin-bottom: 8px;
+  margin-bottom: 16px;
 }
 
 #portfolio #portfolio-grid .project .caption {
@@ -409,9 +403,9 @@ header #icon span {
 }
 
 #about {
-  background-color: #f0f0f0;
+  background-color: #0e0d0d;
   padding: 32px 0 32px 0;
-  color: #0e0d0d;
+  color: #f0f0f0;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -533,7 +527,7 @@ header #icon span {
 }
 
 #about #text .text .link {
-  color: #0e0d0d;
+  color: #f0f0f0;
   font-weight: bold;
   cursor: pointer;
   -webkit-transition: 0.3s;
@@ -550,6 +544,9 @@ header #icon span {
 
 footer {
   padding: 8px;
+  width: 100vw;
+  background-color: #0e0d0d;
+  text-align: center;
 }
 
 footer p {
@@ -573,7 +570,7 @@ footer p {
   #about #about-grid {
     display: -ms-grid;
     display: grid;
-        grid-template-areas: "photo text" "skills text" "skills-list text";
+        grid-template-areas: 'photo text' 'skills text' 'skills-list text';
     row-gap: 16px;
     -webkit-column-gap: 16px;
             column-gap: 16px;
