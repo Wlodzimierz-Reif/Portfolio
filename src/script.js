@@ -52,3 +52,46 @@ window.onload = () => {
   burgerMenu.addEventListener('click', toggleMenu);
   moreInfo.addEventListener('click', toggleSection);
 };
+
+const projects = document.querySelectorAll('.project');
+
+projects.forEach((element) => {
+  element.style.opacity = 0;
+  console.log('changed opacity to 0');
+});
+
+const projectInView = (project, percentageScroll = 100) => {
+  const projectTop = project.getBoundingClientRect().top;
+  const projectBottom = project.getBoundingClientRect().bottom;
+  return (
+    projectTop <=
+      (window.innerHeight || document.documentElement.clientHeight) *
+        (percentageScroll / 100) &&
+    projectBottom >=
+      (window.innerHeight || document.documentElement.clientHeight) *
+        (percentageScroll / 300)
+  );
+};
+
+const displayScrollElement = (project) => {
+  project.classList.remove('slide-out-right');
+  project.classList.add('scrolled');
+};
+const hideScrollElement = (project) => {
+  project.classList.remove('scrolled');
+  project.classList.add('slide-out-right');
+};
+
+const handleScrollAnimation = () => {
+  projects.forEach((project) => {
+    if (projectInView(project, 75)) {
+      displayScrollElement(project);
+    } else {
+      if (project.classList.contains('scrolled')) hideScrollElement(project);
+    }
+  });
+};
+
+window.addEventListener('scroll', () => {
+  handleScrollAnimation();
+});
