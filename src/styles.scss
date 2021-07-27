@@ -15,8 +15,7 @@ html {
 }
 
 @mixin btn-primary {
-  border: 1px solid $break-color;
-  border-radius: 5px;
+  border: 2px solid $break-color;
   color: $primary-color;
   padding: $spacing;
   cursor: pointer;
@@ -28,9 +27,7 @@ html {
 }
 
 @mixin btn-secondary {
-  border: 1px solid $primary-color;
-  border-radius: 5px;
-
+  border: 2px solid $primary-color;
   color: $primary-color;
   padding: $spacing;
   cursor: pointer;
@@ -55,7 +52,7 @@ body {
 
 a {
   text-decoration: none;
-  // transition: 0.8s;
+  transition: 0.3s;
   color: $primary-color;
 
   &:hover {
@@ -64,9 +61,9 @@ a {
 }
 
 .hidden {
-  visibility: hidden !important;
   opacity: 0 !important;
-  // transition: 0.3s;
+  transition: 0.3s;
+  top: -150px !important;
 }
 
 .slideup,
@@ -120,20 +117,30 @@ section {
 // NAV
 
 nav {
+  width: 100%;
+  height: $spacing * 6;
+  background-color: $secondary-color;
+  position: fixed;
+  top: 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: $spacing;
+  z-index: 1;
+
   #logo {
-    text-align: center;
-    font-size: $spacing * 2;
     color: rgb(42, 77, 163);
-    position: absolute;
-    left: $spacing;
-    top: $spacing;
-    background-image: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2));
+    z-index: 2;
+    font-size: $spacing * 2.5;
+    font-family: 'Consolas', 'Inconsolata', 'Courier New', monospace, sans-serif;
 
     * {
       font-family: 'Consolas', 'Inconsolata', 'Courier New', monospace,
         sans-serif;
     }
-
+    span {
+      font-size: $spacing * 2.5;
+    }
     .tag {
       color: grey;
     }
@@ -144,24 +151,29 @@ nav {
   }
 
   #links {
-    top: 5px;
-    right: 5px;
+    top: $spacing * 6;
+    right: 0;
     position: fixed;
-    background-color: $secondary-transparent;
-    visibility: visible;
+    width: 100%;
+    background-color: $secondary-color;
     opacity: 1;
     z-index: 1;
-    transition: 0.3s;
+    transition: 0.5s;
+    text-align: center;
+    :nth-child(1) {
+      padding-top: 0;
+    }
 
     a {
-      position: relative;
-      min-width: 125px;
+      font-size: $spacing * 2.5;
+      font-weight: 600;
+      background-color: $secondary-color;
     }
   }
 
   a {
     padding: $spacing;
-    font-size: 17px;
+    font-size: $spacing * 2;
     display: block;
     color: $primary-color;
   }
@@ -169,16 +181,11 @@ nav {
   #icon {
     color: $primary-color;
     display: block;
-    position: fixed;
-    right: 5px;
-    top: 5px;
     height: 40px;
     width: 40px;
-    background-color: $secondary-transparent;
     display: flex;
     justify-content: center;
     align-items: center;
-    // border-radius: 20px;
     z-index: 2;
 
     span {
@@ -344,7 +351,6 @@ nav {
       padding: 0;
       height: 250px;
       width: 250px;
-      border-radius: 20px;
     }
   }
 
@@ -429,7 +435,7 @@ nav {
 
 footer {
   padding: $spacing;
-  width: 100vw;
+  width: 100%;
   background-color: $secondary-color;
   text-align: center;
 
@@ -439,13 +445,32 @@ footer {
 }
 
 @media only screen and (min-width: 768px) {
+  nav {
+    #icon {
+      display: none;
+    }
+    #links {
+      display: flex;
+      align-items: center;
+      position: static;
+      opacity: 1 !important;
+      height: 100%;
+      width: unset;
+      overflow: hidden;
+      a {
+        // padding: 0;
+        padding: 0 $spacing * 4;
+      }
+    }
+  }
+
   .jumbotron {
     div {
       h1 {
-        font-size: 4vw;
+        font-size: 6vw;
       }
       h3 {
-        font-size: 2vw;
+        font-size: 3vw;
       }
     }
   }
@@ -488,6 +513,17 @@ footer {
 }
 
 @media only screen and (min-width: 1024px) {
+  .jumbotron {
+    div {
+      h1 {
+        font-size: 4vw;
+      }
+      h3 {
+        font-size: 2vw;
+      }
+    }
+  }
+
   #portfolio {
     #portfolio-grid {
       grid-template-columns: auto auto auto;
@@ -505,7 +541,10 @@ footer {
     }
   }
 
-  #logo {
-    font-size: $spacing * 3;
-  }
+  // nav {
+  //   font-size: $spacing * 3;
+  //   * {
+  //     font-size: $spacing * 3;
+  //   }
+  // }
 }

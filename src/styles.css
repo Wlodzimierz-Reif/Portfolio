@@ -39,6 +39,8 @@ body {
 
 a {
   text-decoration: none;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
   color: #f0f0f0;
 }
 
@@ -47,8 +49,10 @@ a:hover {
 }
 
 .hidden {
-  visibility: hidden !important;
   opacity: 0 !important;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+  top: -150px !important;
 }
 
 .slideup,
@@ -119,19 +123,38 @@ section {
   }
 }
 
+nav {
+  width: 100%;
+  height: 48px;
+  background-color: #0e0d0d;
+  position: fixed;
+  top: 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 8px;
+  z-index: 1;
+}
+
 nav #logo {
-  text-align: center;
-  font-size: 16px;
   color: #2a4da3;
-  position: absolute;
-  left: 8px;
-  top: 8px;
-  background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(0, 0, 0, 0.2)), to(rgba(0, 0, 0, 0.2)));
-  background-image: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2));
+  z-index: 2;
+  font-size: 20px;
+  font-family: 'Consolas', 'Inconsolata', 'Courier New', monospace, sans-serif;
 }
 
 nav #logo * {
   font-family: 'Consolas', 'Inconsolata', 'Courier New', monospace, sans-serif;
+}
+
+nav #logo span {
+  font-size: 20px;
 }
 
 nav #logo .tag {
@@ -143,25 +166,31 @@ nav #logo .name {
 }
 
 nav #links {
-  top: 5px;
-  right: 5px;
+  top: 48px;
+  right: 0;
   position: fixed;
-  background-color: rgba(41, 41, 41, 0.8);
-  visibility: visible;
+  width: 100%;
+  background-color: #0e0d0d;
   opacity: 1;
   z-index: 1;
-  -webkit-transition: 0.3s;
-  transition: 0.3s;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+  text-align: center;
+}
+
+nav #links :nth-child(1) {
+  padding-top: 0;
 }
 
 nav #links a {
-  position: relative;
-  min-width: 125px;
+  font-size: 20px;
+  font-weight: 600;
+  background-color: #0e0d0d;
 }
 
 nav a {
   padding: 8px;
-  font-size: 17px;
+  font-size: 16px;
   display: block;
   color: #f0f0f0;
 }
@@ -169,12 +198,8 @@ nav a {
 nav #icon {
   color: #f0f0f0;
   display: block;
-  position: fixed;
-  right: 5px;
-  top: 5px;
   height: 40px;
   width: 40px;
-  background-color: rgba(41, 41, 41, 0.8);
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -248,8 +273,7 @@ nav #icon span {
 }
 
 .jumbotron div .btn-primary {
-  border: 1px solid #ffd059;
-  border-radius: 5px;
+  border: 2px solid #ffd059;
   color: #f0f0f0;
   padding: 8px;
   cursor: pointer;
@@ -372,8 +396,7 @@ nav #icon span {
 }
 
 #portfolio #portfolio-grid .project .caption .btn-primary {
-  border: 1px solid #ffd059;
-  border-radius: 5px;
+  border: 2px solid #ffd059;
   color: #f0f0f0;
   padding: 8px;
   cursor: pointer;
@@ -388,8 +411,7 @@ nav #icon span {
 }
 
 #portfolio #portfolio-grid .project .caption .btn-secondary {
-  border: 1px solid #f0f0f0;
-  border-radius: 5px;
+  border: 2px solid #f0f0f0;
   color: #f0f0f0;
   padding: 8px;
   cursor: pointer;
@@ -438,7 +460,6 @@ nav #icon span {
   padding: 0;
   height: 250px;
   width: 250px;
-  border-radius: 20px;
 }
 
 #about #skills {
@@ -544,7 +565,7 @@ nav #icon span {
 
 footer {
   padding: 8px;
-  width: 100vw;
+  width: 100%;
   background-color: #0e0d0d;
   text-align: center;
 }
@@ -554,11 +575,30 @@ footer p {
 }
 
 @media only screen and (min-width: 768px) {
+  nav #icon {
+    display: none;
+  }
+  nav #links {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    position: static;
+    opacity: 1 !important;
+    height: 100%;
+    width: unset;
+    overflow: hidden;
+  }
+  nav #links a {
+    padding: 0 32px;
+  }
   .jumbotron div h1 {
-    font-size: 4vw;
+    font-size: 6vw;
   }
   .jumbotron div h3 {
-    font-size: 2vw;
+    font-size: 3vw;
   }
   #portfolio #portfolio-grid {
     -ms-grid-columns: auto auto;
@@ -602,6 +642,12 @@ footer p {
 }
 
 @media only screen and (min-width: 1024px) {
+  .jumbotron div h1 {
+    font-size: 4vw;
+  }
+  .jumbotron div h3 {
+    font-size: 2vw;
+  }
   #portfolio #portfolio-grid {
     -ms-grid-columns: auto auto auto;
         grid-template-columns: auto auto auto;
@@ -614,9 +660,6 @@ footer p {
   }
   #about #text #info {
     padding-top: 0;
-  }
-  #logo {
-    font-size: 24px;
   }
 }
 /*# sourceMappingURL=styles.css.map */

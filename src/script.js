@@ -1,3 +1,4 @@
+//enables closing burger menu by clicking outside of it
 document.addEventListener('click', (event) => {
   const links = document.getElementById('links');
   const icon = document.getElementById('icon');
@@ -22,13 +23,14 @@ const focusAttention = () => {
     () => icons.forEach((icon) => icon.classList.remove('fade')),
     1000
   );
-  window.scrollTo(0, 0);
 };
 
 const scrollFocus = () => {
-  setTimeout(() => focusAttention(), 1000);
+  window.scrollTo(0, 0);
+  setTimeout(() => focusAttention(), window.scrollY / 1.5); // detects how far window is scrolled down and changes delay
 };
 
+// expands section about me
 const toggleSection = () => {
   const x = document.getElementById('additional-info');
   if (x.classList.contains('slideup')) {
@@ -39,4 +41,14 @@ const toggleSection = () => {
     x.classList.remove('slidedown');
     x.classList.add('slideup');
   }
+};
+
+// couldn't add event listener the usuall way as HTML was not build by that time(not every time, just most of the time!!!)
+window.onload = () => {
+  const contact = document.querySelector('#contact-button');
+  const burgerMenu = document.querySelector('#icon');
+  const moreInfo = document.querySelector('#more-info');
+  contact.addEventListener('click', scrollFocus);
+  burgerMenu.addEventListener('click', toggleMenu);
+  moreInfo.addEventListener('click', toggleSection);
 };

@@ -36,7 +36,7 @@
   </head>
 
   <body>
-    <nav id="home">
+    <nav>
       <p id="logo">
         <span class="tag">&#60;</span>dev<span class="tag">&#62;</span
         ><span class="name">WReif</span><span class="tag">&#60;/</span>dev<span
@@ -44,20 +44,18 @@
           >&#62;</span
         >
       </p>
-
-      <div id="links" class="hidden" onclick="myFunction()">
+      <div id="links" class="hidden">
         <a href="#home" class="link">Home</a>
         <a href="#portfolio" class="link">Portfolio</a>
         <a href="#about" class="link">About</a>
-        <a href="#home" class="link" onclick="scrollFocus()">Contact</a>
+        <a href="#home" class="link" id="contact-button">Contact</a>
       </div>
-
-      <a href="javascript:void(0);" id="icon" onclick="toggleMenu()">
+      <a href="javascript:void(0);" id="icon">
         <span class="fa fa-bars"></span>
       </a>
     </nav>
 
-    <section class="jumbotron">
+    <section class="jumbotron" id="home">
       <div>
         <h1>Hello, I'm Wlodzimierz Reif</h1>
         <h3>Junior Software Developer</h3>
@@ -236,7 +234,7 @@
       <h2>About me</h2>
       <div id="about-grid">
         <div id="image">
-          <img src="./images/wlodzimierz-reif.png" alt="" />
+          <img src="./images/wlodzimierz-reif.jpg" alt="" />
         </div>
         <div id="skills">
           <h2>Skills</h2>
@@ -274,9 +272,7 @@
             have recently done a career change and challenged myself with 12
             week fully immersive front-end software developer course. I am
             currently open for job opportunities.
-            <span onclick="{toggleSection()}" id="more-info" class="link"
-              >Find out more</span
-            >
+            <span id="more-info" class="link">Find out more</span>
           </p>
           <p id="additional-info" class="slideup text">
             So far I could have described 30 years of my life in many ways. As a
