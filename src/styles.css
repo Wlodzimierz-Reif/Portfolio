@@ -375,6 +375,7 @@ nav #icon span {
 }
 
 #portfolio h2 {
+  font-size: 40px;
   text-align: center;
   padding: 40px;
 }
@@ -623,10 +624,6 @@ nav #icon span {
 
 #about #text .text .link:hover {
   color: #ffd059;
-}
-
-#about #text #additional-info {
-  padding: 0 8px;
 }
 
 footer {

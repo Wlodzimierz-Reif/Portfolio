@@ -286,6 +286,7 @@ nav {
   background-image: linear-gradient(rgba(0, 0, 0, 0), $secondary-color);
 
   h2 {
+    font-size: $spacing * 5;
     text-align: center;
     padding: $spacing * 5;
   }
@@ -458,10 +459,6 @@ nav {
           color: $break-color;
         }
       }
-    }
-
-    #additional-info {
-      padding: 0 $spacing;
     }
   }
 }
