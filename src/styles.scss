@@ -145,6 +145,22 @@ section {
   }
 }
 
+@keyframes blink-caret {
+  from,
+  to {
+    border-color: transparent;
+  }
+  50% {
+    border-color: $break-color;
+  }
+}
+
+.typewriter h3 {
+  border-right: $spacing * 0.5 solid $break-color;
+  letter-spacing: $spacing * 0.5;
+  animation: blink-caret 0.75s step-end infinite;
+}
+
 // NAV
 // NAV
 // NAV
@@ -235,17 +251,18 @@ nav {
   align-items: center;
 
   div {
+    h1,
+    h3 {
+      margin: $spacing * 3;
+      color: $primary-color;
+      text-align: center;
+    }
     h1 {
       font-size: 8vw;
     }
     h3 {
       font-size: 4vw;
-    }
-    h1,
-    h3 {
-      padding: $spacing * 3;
-      color: $primary-color;
-      text-align: center;
+      margin-top: $spacing * 5;
     }
   }
 
